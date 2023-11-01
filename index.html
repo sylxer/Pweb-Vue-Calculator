@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <link rel="icon" href="/Pweb-Vue-Calculator/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vite App</title>
-    <script type="module" crossorigin src="/Pweb-Vue-Calculator/assets/index-c76b3d3a.js"></script>
-    <link rel="stylesheet" href="/Pweb-Vue-Calculator/assets/index-71ca9186.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    
-  </body>
-</html>
+<head>
+    <h1>Calculator</h1><br><br>
+</head>
+
+<body>
+    <div id="app">
+        hasil : {{ hasil }}<br>
+        <input v-model="num1" type="number">
+        <input v-model="num2" type="number"><br>
+        <button v-on:click="hasil=num1+num2">+</button>
+        <button v-on:click="hasil=num1-num2">-</button>
+        <button v-on:click="hasil=num1*num2">*</button>
+        <button v-on:click="hasil=num1/num2">/</button>
+    </div>
+</body>
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script>
+    const app = Vue.createApp({
+        data(){
+            return{
+                num1: 0,
+                num2: 0,
+                hasil: 0,
+            }
+        }
+    })
+    app.mount('#app')
+</script>
